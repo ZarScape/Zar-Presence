@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0d1117;
+  @apply text-white antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.brand-font {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.text-echo {
+  /* Matching the 3D-ish sharp shadow from the screenshot */
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  @apply bg-brand-primary/30;
+}
+
+.glass {
+  @apply bg-brand-card/60 backdrop-blur-xl border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-blue-400;
+}
+
+.btn-primary {
+  @apply px-8 py-3 bg-brand-primary text-black font-bold rounded-full hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_20px_#0066ff];
+}
+
+.btn-secondary {
+  @apply px-8 py-3 glass text-white font-bold rounded-full hover:bg-white/10 transition-all duration-200;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full border-2 border-brand-dark hover:bg-white/20 transition-colors;
+}
