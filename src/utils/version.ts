@@ -16,7 +16,7 @@ export interface VersionInfo {
 
 export async function fetchVersionInfo(): Promise<VersionInfo | null> {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/ZarScape/ZarPresence/refs/heads/master/updates.json');
+    const response = await fetch(`https://raw.githubusercontent.com/ZarScape/ZarPresence/refs/heads/master/updates.json?t=${Date.now()}`);
     if (!response.ok) throw new Error('Failed to fetch version info');
     return await response.json();
   } catch (error) {
